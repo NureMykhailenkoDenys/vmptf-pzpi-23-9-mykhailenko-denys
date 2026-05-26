@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Фільтр</title>
+</head>
+<body>
+
+<h1>Фільтр тварин</h1>
+
+<button onclick="filterAnimals('Домашня тварина')">Домашні тварини</button>
+<button onclick="filterAnimals('Дика тварина')">Дикі тварини</button>
+
+<ul id="filteredList"></ul>
+
+<script>
+
+function filterAnimals(filterValue) {
+
+    fetch("animals.json")
+        .then(response => response.text())
+        .then(text => {
+
+            const data = JSON.parse(text);
+
+            const filteredAnimals = data.filter(animal =>
+                animal.type === filterValue
+            );
+
+            const list = document.getElementById("filteredList");
+
+            list.innerHTML = "";
+
+            filteredAnimals.forEach(animal => {
+
+                const li = document.createElement("li");
+
+                li.innerHTML = `
+                    <h3>${animal.name}</h3>
+                    <p>Тип: ${animal.type}</p>
+                    <img src="${animal.photo}" width="200">
+                `;
+
+                list.appendChild(li);
+            });
+
+        })
+        .catch(error => console.log(error));
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Кіт",
+    "type": "Домашня тварина",
+    "photo": "https://exvet.com.ua/share/file/jiopr8s0x2.jpg"
+  },
+  {
+    "name": "Собака",
+    "type": "Домашня тварина",
+    "photo": "https://kryazh.com.ua/wp-content/uploads/2025/02/image-267.jpeg"
+  },
+  {
+    "name": "Тигр",
+    "type": "Дика тварина",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Siberian_Tiger_by_Malene_Th.jpg/250px-Siberian_Tiger_by_Malene_Th.jpg"
+  },
+  {
+    "name": "Лев",
+    "type": "Дика тварина",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg"
+  },
+  {
+    "name": "Кролик",
+    "type": "Домашня тварина",
+    "photo": "https://ireland.apollo.olxcdn.com/v1/files/1uahi1168pm61-UA/image"
+  },
+  {
+    "name": "Вовк",
+    "type": "Дика тварина",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Polarwolf004.jpg/250px-Polarwolf004.jpg"
+  }
+]

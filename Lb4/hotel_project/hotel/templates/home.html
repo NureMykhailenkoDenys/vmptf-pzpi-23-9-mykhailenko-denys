@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        Hotel Booking System
+    </title>
+
+</head>
+
+<body>
+
+    <h1>
+        Система бронювання готелів
+    </h1>
+
+    <a href="/available-rooms/">
+        Доступні кімнати
+    </a>
+
+    <br><br>
+
+    <a href="/create-booking/">
+        Створити бронювання
+    </a>
+
+    <h2>
+        Усі бронювання
+    </h2>
+
+    {% for booking in bookings %}
+
+        <div
+            style="
+                border:1px solid black;
+                padding:10px;
+                margin-bottom:10px;
+            "
+        >
+
+            <p>
+                Клієнт:
+                {{ booking.client }}
+            </p>
+
+            <p>
+                Кімната:
+                {{ booking.room }}
+            </p>
+
+            <p>
+                Заїзд:
+                {{ booking.check_in }}
+            </p>
+
+            <p>
+                Виїзд:
+                {{ booking.check_out }}
+            </p>
+
+            <a
+                href="/delete-booking/{{ booking.id }}/"
+            >
+                Видалити
+            </a>
+
+        </div>
+
+    {% endfor %}
+
+</body>
+
+</html>

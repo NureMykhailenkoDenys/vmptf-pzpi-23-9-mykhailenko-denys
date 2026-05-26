@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        Create Booking
+    </title>
+
+</head>
+
+<body>
+
+    <h1>
+        Створення бронювання
+    </h1>
+
+    <a href="/">
+        На головну
+    </a>
+
+    <br><br>
+
+    <form method="POST">
+
+        {% if error %}
+
+            <p
+                style="
+                    color:red;
+                    font-weight:bold;
+                "
+            >
+                {{ error }}
+            </p>
+
+        {% endif %}
+
+        {% csrf_token %}
+
+        <input
+            type="text"
+            name="client_name"
+            placeholder="Ім'я клієнта"
+            required
+        >
+
+        <br><br>
+
+        <input
+            type="text"
+            name="phone"
+            placeholder="Телефон"
+            required
+        >
+
+        <br><br>
+
+        <select
+            name="room_id"
+        >
+
+            {% for room in rooms %}
+
+                <option
+                    value="{{ room.id }}"
+                >
+
+                    Room {{ room.number }}
+
+                </option>
+
+            {% endfor %}
+
+        </select>
+
+        <br><br>
+
+        <input
+            type="date"
+            name="check_in"
+            required
+        >
+
+        <br><br>
+
+        <input
+            type="date"
+            name="check_out"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+            Створити бронювання
+        </button>
+
+    </form>
+
+</body>
+
+</html>

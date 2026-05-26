@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        Available Rooms
+    </title>
+
+</head>
+
+<body>
+
+    <h1>
+        Доступні кімнати
+    </h1>
+
+    <a href="/">
+        На головну
+    </a>
+
+    <br><br>
+
+    {% for room in rooms %}
+
+        <div
+            style="
+                border:1px solid black;
+                padding:10px;
+                margin-bottom:10px;
+            "
+        >
+
+            <p>
+                Готель:
+                {{ room.hotel }}
+            </p>
+
+            <p>
+                Кімната:
+                {{ room.number }}
+            </p>
+
+            <p>
+                Ціна:
+                {{ room.price }}
+            </p>
+
+            <p>
+                Послуги:
+            </p>
+
+            <ul>
+
+                {% for service in room.services.all %}
+
+                    <li>
+                        {{ service.name }}
+                        -
+                        {{ service.price }} грн
+                    </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+    {% endfor %}
+
+</body>
+
+</html>

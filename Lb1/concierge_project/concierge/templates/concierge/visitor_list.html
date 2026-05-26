@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список відвідувачів</title>
+</head>
+<body>
+
+    <h1>Список відвідувачів</h1>
+
+    <a href="/add/">Додати відвідувача</a>
+
+    <hr>
+
+    {% for visitor in visitors %}
+
+        <p>
+            <b>{{ visitor.full_name }}</b><br>
+
+            Час входу:
+            {{ visitor.entry_time }}<br>
+
+            {% if visitor.is_inside %}
+
+                Статус: У приміщенні
+
+                <a href="/exit/{{ visitor.id }}/">
+                    Відмітити вихід
+                </a>
+
+            {% else %}
+
+                Статус: Вийшов<br>
+
+                Час виходу:
+                {{ visitor.exit_time }}
+
+            {% endif %}
+        </p>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>

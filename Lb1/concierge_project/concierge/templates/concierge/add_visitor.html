@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Додавання відвідувача</title>
+</head>
+<body>
+
+    <h1>Додати відвідувача</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <input
+            type="text"
+            name="full_name"
+            placeholder="ПІБ відвідувача"
+            required
+        >
+
+        <button type="submit">
+            Додати
+        </button>
+
+    </form>
+
+</body>
+</html>
